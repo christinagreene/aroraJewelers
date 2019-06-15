@@ -95,6 +95,21 @@ button  {
   padding: 5px 10px;
 }
 
+.readMore:hover {
+  background: #faba63;
+  color: black;
+}
+
+.readMore:active {
+  background: #14171f;
+  color: white;
+}
+
+.readMore:focus {
+  border: 2px dotted #fff;
+  
+}
+
 
 /* Header Styles////////////////////////// */
 header {
@@ -122,14 +137,25 @@ header {
 
 .menu a {
   text-decoration: none;
-  padding: 10px;
+  padding: 10px 0;
+  margin: 10px;
+}
+
+.menu a:hover {
+  border-bottom: 1px solid #faba63;
+}
+.menu a:active {
+  color: #fff;
+}
+.menu a:focus {
+  border: 1px dotted #faba63;
 }
 
 .menu li:first-child a {
-  padding-left: 0;
+  margin-left: 0;
 }
 
-header i {
+.hamburgerMenu {
   position: absolute;
   top: 25px;
   right: 25px;
@@ -162,7 +188,7 @@ span {
 .social {
   position: absolute;
   bottom: 30px;
-  right: 40px;
+  right: 30px;
 }
 
 .social ul {
@@ -177,6 +203,19 @@ span {
 
 .social a {
   color: #fff;
+  padding: 5px;
+}
+
+.social a:hover {
+  color: #faba63;
+}
+
+.social a:active {
+  border-bottom: 1px dotted #faba63;
+}
+
+.social a:focus {
+  border: 1px dotted #fff;
 }
 
 /* About Section Styles /////////////////////*/
@@ -250,8 +289,15 @@ span {
 }
 
 /* Blog Sections 1&2 General Styles////////////// */
-.blog {
+
+.blog1Left,
+.blog2Left {
   float: left;
+}
+
+.blog1Right,
+.blog2Right {
+  float:right;
 }
 
 .blog1Left {
@@ -299,6 +345,21 @@ span {
   line-height: 1.55;
 }
 
+.generalLeft a:hover,
+.generalRight a:hover {
+  color: #faba63;
+}
+
+.generalLeft a:active,
+.generalRight a:active {
+  border-bottom: 1px solid #faba63;
+}
+
+.generalLeft a:focus,
+.generalRight a:focus {
+  border: 1px dotted #fff;
+}
+
 .generalCenter {
   width: 55%;
   text-align: center;
@@ -324,10 +385,34 @@ input {
   border-bottom-width: 2px;
 }
 
+input:hover {
+  box-shadow: 0 0 20px #fff;
+
+}
+
+input:focus {
+  box-shadow: 0 0 20px #faba63;
+}
+
 button {
   background: #000;
   color: #fff;
   border: 2px solid black;
+}
+
+button:hover {
+  background: #faba63;
+  color: #000;
+}
+
+button:active {
+  background: #14171f;
+  color: #fff;
+  border: 2px dotted #fff;
+}
+
+button:focus {
+  border: 2px dotted #faba63;
 }
 
 input,
@@ -435,54 +520,23 @@ button {
   
   .blog {
     float: none;
-  }
-  
-  .blog1 {
-    display: table;
-  }
-
-  .blog1Left {
-    margin: 40px 0;
-    padding: 0; 
-  }
-
-  .blog1Left,
-  .blog2Right {
-    width:100%;
-    text-align: center;
-  }
-
-  .blog1Left h2,
-  .blog1Left p,
-  .blog2Right h2,
-  .blog2Right p {
     width: 90%;
-    margin: 0 auto; 
+    margin: 0 auto;
+    padding: 25px 0;
+    text-align: center;
   }
 
   .blog1Left p,
   .blog2Right p {
     padding-top: 10px;
     padding-bottom: 30px;
-  }
-
-  .blog1Right {
-    display: table-header-group; 
-    margin-bottom: 5%;
+    text-align: left;
   }
 
   .blog1Right img,
   .blog2Left img {
     object-fit: cover;
     max-height: 400px;
-  }
-
-  .blog2Left {
-    width: 100%;
-  }
-
-  .blog2Right {
-    padding: 30px 0 40px 0;
   }
 
   .generalLeft {
@@ -499,8 +553,6 @@ button {
   }
 }
 
-/* **NOTE: The display table idea was found through https://stackoverflow.com/questions/220273/how-can-i-reorder-my-divs-with-css */
-
 /* ///////////////////////// */
 @media (max-width:768px) {
   header {
@@ -508,11 +560,11 @@ button {
     height: 565px;
   }
 
-  header nav {
+  .menu {
     display: none;
   }
 
-  header i {
+  .hamburgerMenu {
     visibility: visible;
   }
 
